@@ -50,8 +50,8 @@ export default {
 @import '../../style/viriables.scss';
 
 .tabbar {
+  position: fixed;
   box-sizing: border-box;
-  position: absolute;
   left: 0;
   bottom: 0;
   padding: 0 0.18rem;
@@ -60,6 +60,7 @@ export default {
   border-top: 1px solid #f1f1f1;
   display: flex;
   color: $content-font-color;
+  background-color: #fff;
   .tabbar_item {
     flex: 1;
     text-align: center;

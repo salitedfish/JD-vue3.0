@@ -8,15 +8,42 @@ const routes = [
     children: [
       {
         path: '/home',
+        name: 'Home',
         component: () => { return import('../views/index/pages/Home.vue') }
       }
     ]
+  },
+  {
+    path: '/malldetail',
+    name: 'MallDetail',
+    component: ()=>{return import('../views/malldetail/MallDetail.vue')},
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => { return import('../views/login/Login') },
+    // beforeEnter(to, from, next) {
+    //   let { isLogin } = localStorage
+    //   isLogin ? next("/home") : next();
+    // }
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: ()=>{return import('../views/register/Register.vue')}
   }
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
+})
+
+//使用导航守卫
+router.beforeEach((to, from, next) => {
+  
+  let { isLogin } = localStorage;
+  (isLogin || to.name === 'Login' || to.name === 'Register') ? next() : next({ name: 'Login' });
 })
 
 export default router

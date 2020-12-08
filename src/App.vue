@@ -11,6 +11,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./style/viriables.scss"
-
+@import "./style/viriables.scss";
+@import "./style/index.scss";
 </style>
