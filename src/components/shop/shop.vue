@@ -1,8 +1,8 @@
 <template>
   <div class="nearmall_item">
     <img :src="item.imgUrl" alt="" class="nearmall_item_img" />
-    <div class="nearmall_item_text">
-      <div class="nearmall_item_title">{{ item.name }}</div>
+    <div class="nearmall_item_text" :class="{'nearmall_item_text-border':haveBorder}">
+      <div class="nearmall_item_title" >{{ item.name }}</div>
       <div class="nearmall_tags">
         <span class="nearmall_tag"> 基础运费：{{ item.expressPrice }} </span>
         <span class="nearmall_tag"> 起送：{{ item.expressLimit }} </span>
@@ -19,6 +19,7 @@ export default {
   name: 'Shop',
   props: {
     item: Object,
+    haveBorder: String,
   },
   setup() {
 
@@ -37,7 +38,6 @@ export default {
   }
   .nearmall_item_text {
     flex: 1;
-    border-bottom: 1px solid #f1f1f1;
     padding-bottom: 0.12rem;
     .nearmall_item_title {
       line-height: 0.22rem;
@@ -58,6 +58,9 @@ export default {
       line-height: 0.18rem;
       font-size: 0.13rem;
     }
+  }
+  .nearmall_item_text-border {
+    border-bottom: 1px solid #f1f1f1;
   }
 }
 </style>

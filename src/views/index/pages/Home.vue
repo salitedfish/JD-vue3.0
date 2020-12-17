@@ -28,11 +28,18 @@
     <div class="nearmall">
       <h3 class="nearmall_title">附近店铺</h3>
     </div>
-    <shop v-for="item in mallList" :key="item._id" :item="item"></shop>
+    <shop
+      v-for="item in mallList"
+      :key="item._id"
+      :item="item"
+      haveBorder="true"
+      v-on:click="enterMallDetail(item._id)"
+    ></shop>
   </div>
 </template>
 
 <script>
+import {useRouter} from "vue-router"
 import Shop from '../../../components/shop/shop.vue'
 import { get } from '../../../utils/request.js'
 import { reactive } from 'vue'
@@ -57,12 +64,18 @@ export default {
     Shop,
   },
   setup() {
+    const router = useRouter()
     const mallList = reactive([])
 
     getList('/api/shop/hot-list', mallList)
 
+    const enterMallDetail = (id)=>{
+      router.push(`/malldetail/${id}`)
+    }
+
     return {
       mallList,
+      enterMallDetail
     }
   },
 }
