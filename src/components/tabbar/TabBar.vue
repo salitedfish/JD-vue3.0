@@ -64,7 +64,7 @@ export default {
   padding: 0 0.18rem;
   width: 100%;
   height: 0.49rem;
-  border-top: 1px solid #f1f1f1;
+  border-top: .01rem solid #f1f1f1;
   display: flex;
   color: $content-font-color;
   background-color: #fff;

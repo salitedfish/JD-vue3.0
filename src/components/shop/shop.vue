@@ -60,7 +60,7 @@ export default {
     }
   }
   .nearmall_item_text-border {
-    border-bottom: 1px solid #f1f1f1;
+    border-bottom: .01rem solid #f1f1f1;
   }
 }
 </style>

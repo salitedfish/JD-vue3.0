@@ -116,7 +116,7 @@ export default {
   }
   .wrapper_input {
     background-color: #f9f9f9;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: .01rem solid rgba(0, 0, 0, 0.1);
     border-radius: 0.06rem;
     height: 0.48rem;
     margin: 0 0.4rem 0.16rem 0.4rem;
