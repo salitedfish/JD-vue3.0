@@ -230,7 +230,9 @@ export default {
 }
 .goodList {
   display: flex;
-  height: 4.5rem;
+  position: absolute;
+  top: 1.66rem;
+  bottom: .5rem;
   width: 100%;
   .left {
     overflow-y: scroll;
